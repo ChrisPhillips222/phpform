@@ -1,0 +1,1 @@
+[09-May-2018 18:51:31 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'paigedah_mailtester'@'localhost' (using password: YES) in /home/paigedah/public_html/phpmailertest/includes/connect.php on line 8
