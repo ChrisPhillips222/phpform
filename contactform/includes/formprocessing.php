@@ -1,6 +1,6 @@
 <?php
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+if(isset($_POST["submit"])) {
   $errCount = false;
   if (empty($_POST["name"])) {
     $nameErr = "Name is required";
@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $comment = test_input($_POST["comment"]);
   }
-  if (errCount != true){
+  if ($nameErr=='' && $emailErr=='' && $subjError=='' ){
       include "includes/writetodatabase.php";
       include "includes/mailprocessing.php";
 }
