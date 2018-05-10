@@ -7,8 +7,6 @@ $name = "";
 $email = "";
 $subject = ""; 
 $comment = "";
-$errCount = false;
-$errTest = "";
 
 if(isset($conn)) {
     $conn = null;

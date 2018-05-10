@@ -9,8 +9,6 @@ $name = "";
 $email = "";
 $subject = ""; 
 $comment = "";
-$errCount = false;
-$errTest = "";
 
 //set database log in information
 
