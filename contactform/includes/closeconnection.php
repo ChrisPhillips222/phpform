@@ -3,7 +3,8 @@
 $nameErr = "";
 $emailErr = ""; 
 $subjError = "";
-$name = "";
+$firstName = "";
+$lastName = "";
 $email = "";
 $subject = ""; 
 $comment = "";

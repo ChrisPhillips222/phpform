@@ -8,13 +8,14 @@
 
     
 //create $sql variable
-  $sql = "INSERT INTO mailtest(
+  $sql = "INSERT INTO contact(
       name,
       email,
       subject,
       comment
       )VALUES(
-      '$name', 
+      '$firstNname',
+	  '$lastName',
       '$email', 
       '$subject',
       '$comment'

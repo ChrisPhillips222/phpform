@@ -1,0 +1,359 @@
+/*
+File Name: styles.less
+Date: 04/18/18
+Programmer: Janice Bradford
+Project: History 251: Albina Street Walking Tour
+*/ 
+
+@import "mixins.less"; 
+
+/* use to outline blocks for styling and debugging
+* { outline: 1px solid red !important } */
+
+/* MOBILE STYLES < 481 pixels*/
+
+/* global styles */
+
+body { 
+    margin: 0;
+    padding: 0; 
+    font-size: @m_font_size; 
+} 
+
+h1 {
+    font-family: 'Libre Baskerville', serif;
+    color: @white; 
+    font-size: @h1_font_size;
+} 
+
+h2,
+h3 {
+    font-family: 'Libre Baskerville', serif;
+    color: @black-text;
+}
+
+h2 {
+    font-size: @h2_font_size;
+}
+
+h3 {
+    font-size: @h3_font_size;
+}
+
+p {
+    font-family: 'Crimson Text', serif;
+    color: @black-text;  
+    font-size: @m_font_size;
+} 
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* text block */
+.content-block { 
+    margin-left: 10px; 
+    margin-right: 10px;
+}
+
+/* header */
+
+.header {
+    background-color: @black-bkgnd;
+    text-align: center; 
+    border-bottom: 1px solid @grey; 
+    padding: 10px;
+    margin-top: 4.5em; 
+}
+
+/* footer */
+
+.footer { 
+    background-color: @black-bkgnd;
+    text-align: center; 
+    border-bottom: 1px solid @grey; 
+    padding: 10px; 
+}
+
+iframe {
+	height: 350px;
+	width: 300px; 
+}
+
+.copyright {
+    font-size: @copyright_font_size; 
+    line-height: 1.1em; 
+    text-align: center;
+		color: @white;
+		padding-top: 1em; 
+}
+
+/* Home - locations grid */
+.excerpts {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 50px; 
+    margin: 0 0 10px 0; 
+}
+
+.item {
+    justify-content: center;
+    align-items: center;
+    border: 5px solid rgba(0, 0, 0, 0.03);
+    background-color: @black-bkgnd;
+    height: 400px;
+} 
+
+.item p {
+    color: @white;
+    align-content: center; 
+    text-align: center; 
+}
+
+/* colored divider */
+
+.divider {
+    display: grid;
+    height: 7px; 
+    width: 100%; 
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: @red; 
+}
+
+.div-left {
+    background-color: @red;
+}
+
+.div-middle {
+    background-color: @yellow;
+}
+
+.div-right {
+    background-color: @green; 
+}
+
+/* navigation bar */
+
+nav {	
+    background-color: @black-bkgnd;
+    padding: .5em;
+    position: relative;
+
+    ul {		
+
+        li {	
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            a {
+                color: @white;
+                font-family:  'crimson text', serif;
+
+                &:visited, &:focus {
+                    color: @white;
+                }
+            }
+
+            a:hover {
+                background-color: @red !important;
+                color: @white;
+            }
+
+        }
+
+    }	
+
+}
+
+// div#navbar
+
+div#navbar {
+    background-color: @black-bkgnd;
+    height: 600px;
+    left: 0;
+    overflow-y: hidden;
+    position: absolute;
+    transform: translate(-100%, 10%);
+    transition: all 0.2s ease-in-out;
+    top: 20%;
+    width: 85%;
+    visibility: visible;
+
+    ul {
+
+        li {
+            border-bottom: 1px dotted @white;
+            padding: .5em 1em .5em 1em;
+
+            a {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+div#navbar.active {
+    transform: translate(0%, 10%);
+}
+
+// End div#navbar
+
+// Nested Menu
+
+.nested-menu>li>a {
+    color: @white;
+}
+
+.nested-menu.active {
+    opacity: 1;
+    max-height: 500px;
+}
+
+.nested-menu {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-left: 4em;
+    transition: all 0.4s ease-in-out;
+
+    li {
+        border-bottom: 0px dotted @white !important;
+        list-style-type: none;
+
+        &:last-of-type {
+            margin-bottom: 1em;
+        }
+
+    }
+
+}
+
+// End Nested Menu
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background: none;
+    color: @white;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    background: none;
+}
+
+
+// Nav Special Links
+
+.navbar-toggle, nav a.cta-btn {
+    border: 1px solid @white;
+    border-radius: 10%;
+    color: @white;
+    letter-spacing: 1.5px;
+    padding: .6em;
+    text-transform: uppercase;
+    transition: all 0.4s;
+
+    &:hover {
+        background-color: @white;
+        color: @black-bkgnd;
+    }
+
+}
+
+.navbar-toggle {
+    float: left;
+    margin-left: 1em;
+}
+
+// End Nav Special Links 
+
+
+/* TABLET STYLES < 1024 pixels */
+
+@media only screen and (min-width: 481px) {
+
+    p {
+        font-size: @t_font_size;
+    }
+
+    .content-block {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .excerpts {
+        margin: 20px 100px 20px 100px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+	
+	iframe {
+		height: 350px;
+		width: 500px; 
+	}
+	
+    div#navbar {
+        background-color: @black-bkgnd;
+        height: auto;
+        overflow-y: visible;
+        position: relative;
+        transform: translate(0%, 0%);
+        width: auto;
+        visibility: visible;
+
+        ul {
+
+            li {
+                border-bottom: 0px dotted @white;
+                padding: 0;
+            }
+        }
+    }
+
+    .nested-menu {
+        background: @black-bkgnd;
+        padding: 1em 1em 1em 1em;
+        position: absolute;
+        top: 117%;
+        width: 200%;
+
+        li {
+            list-style-type: none;
+            margin: .5em 0;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+        }
+    }
+}
+
+/* DESKTOP STYLES  >= 1024 pixels*/  
+
+@media only screen and (min-width: 1024px) { 
+
+    p { 
+        font-size: @d_font_size; 
+    }
+
+    .content-block { 
+        margin-left: 175px;
+        margin-right: 175px;
+    }
+
+    .excerpts {
+        grid-template-columns: 1fr 1fr; 
+        margin: 25px 150px 25px 150px;  
+    }
+} 

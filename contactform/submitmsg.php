@@ -69,25 +69,12 @@ Project: History 251: Albina Street Walking Tour
 		<main>
 			<div class="content">
 				<article class="content-block">
-					<h2>Heading 2</h2>
+					<h2>Thank you for submitting your<br />Questions or Comments!</h2>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<p>We'll read your submission and get back to you!</p>
 
-					<h3>Heading 3</h3>
-
-					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>If you have submitted a question be sure to check out our <a href="#">FAQ</a> to see if any similar ones have already been answered.</p>
 				</article>
-
-				<?php include 'includes/divider.php'; ?>
-
-				<section class="excerpts">
-					<article class="item"><p>Location 1</p></article>
-					<article class="item"><p>Location 2</p></article>
-					<article class="item"><p>Location 3</p></article>
-					<article class="item"><p>Location 4</p></article>
-					<article class="item"><p>Location 5</p></article>
-					<article class="item"><p>Location 6</p></article>
-				</section>
 			</div>
 		</main>
 

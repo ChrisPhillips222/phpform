@@ -4,16 +4,16 @@
       $mail = new PHPmailer(true);
       try{
 		$mail->IsSMTP();
-		$mail->Host = "paigedahl.webhostingforstudents.com";
+		$mail->Host = "janicebradford.webhostingforstudents.com";
 		$mail->Port = "587";
 		$mail->SMTPAuth = true;
-		$mail->Username = "phpmailertestaccount@paigedahl.webhostingforstudents.com";
-		$mail->Password = "Canelbownoodles$";
+		$mail->Username = "info@janicebradford.webhostingforstudents.com";
+		$mail->Password = "cas285group1";
 		$mail->SMTPSecure = "tls";
 		$mail->From = $_POST["email"];
-		$mail->FromName = $_POST["name"];
-		$mail->AddAddress("phpmailertestaccount@paigedahl.webhostingforstudents.com");
-		$mail->AddCC($_POST["email"], $_POST["name"]);
+		$mail->FromName = $_POST["firstName"]." ".$_POST["lastName"];
+		$mail->AddAddress("info@janicebradford.webhostingforstudents.com");
+	//	$mail->AddCC($_POST["email"], $_POST["name"]);
 		$mail->WordWrap = 50;
 		$mail->IsHTML(true);
 		$mail->Subject = $_POST["subject"];

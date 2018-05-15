@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <!--
-File Name: index.php
+File Name: contact.php
 Date: 04/18/18
-Programmers: Janice Bradford, Chris Phillips, Patrick Ting
+Programmers: Janice Bradford, Chris Phillips
 Project: History 251: Albina Street Walking Tour
 -->
-
+<?php
+include "includes/connect.php";
+include "includes/formprocessing.php";
+?>
 <html lang="en">
 
 	<head>
@@ -22,6 +25,7 @@ Project: History 251: Albina Street Walking Tour
 
 		<link href="assets/bootstrap.min.css" rel="stylesheet">
 		<link href="assets/styles.css" rel="stylesheet" type="text/css">
+		<link href="assets/form.css" rel="stylesheet" type="text/css">
 
 		<style>
 			/* use to outline blocks while styling and debugging
@@ -43,7 +47,7 @@ Project: History 251: Albina Street Walking Tour
 
 					<div id="navbar">
 						<ul class="nav navbar-nav navbar-right">
-							<li class="active"><a href="#" target="_self">Home</a></li>
+							<li class="active"><a href="index.php" target="_self">Home</a></li>
 							<li class="active"><a href="#" target="_self">Information</a></li>
 							<li> <a href="#" class="dropdown-toggle" target="_self">Locations &#9660;</a>
 								<ul class="nested-menu">
@@ -56,7 +60,7 @@ Project: History 251: Albina Street Walking Tour
 								</ul>
 							</li>
 							<li><a href="#" target="_self">FAQ</a></li>
-							<li><a href="contact.php" target="_self">Contact</a></li>
+							<li><a href="#" target="_self">Contact</a></li>
 						</ul><!-- /.nav navbar-nav navbar-right -->
 					</div><!-- /.navbar -->
 					
@@ -65,29 +69,45 @@ Project: History 251: Albina Street Walking Tour
 
 		</header>
 
-
 		<main>
 			<div class="content">
+				
 				<article class="content-block">
-					<h2>Heading 2</h2>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-					<h3>Heading 3</h3>
-
-					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h2>Questions? Comments?</h2>
+					<p>Have a question about the walking tour? Want to share a memory about a location with us?</p>
+					<p>Send us a message!</p>
 				</article>
 
 				<?php include 'includes/divider.php'; ?>
+				
+				<form method="post" action="<?php echo htmlentities($_SERVER["PHP_SELF"]);?>">
+					<div class="form-block">
+					<fieldset>
+						<p class="lbl">First name</p>
+						<input type="text" name="firstName" id="firstName" tabindex="1" required value="<?php echo $firstName;?>">
+  <span class="error"> <?php echo $firstNameErr;?><br>
 
-				<section class="excerpts">
-					<article class="item"><p>Location 1</p></article>
-					<article class="item"><p>Location 2</p></article>
-					<article class="item"><p>Location 3</p></article>
-					<article class="item"><p>Location 4</p></article>
-					<article class="item"><p>Location 5</p></article>
-					<article class="item"><p>Location 6</p></article>
-				</section>
+						<p class="lbl">Last name</p>
+						<input type="text" name="lastName" id="lastName" tabindex="2" value="<?php echo $lastName;?>">
+  <span class="error"> <?php echo $lastNameErr;?><br>
+
+						<p class="lbl">Email address</p>
+						<input type="email" name="email" id="email" tabindex="3" required value="<?php echo $email;?>">
+  <span class="error"> <?php echo $emailErr;?><br>
+
+						<p class="lbl">Subject</p>
+						<input type="text" name="subject" id="subject" tabindex="4" required value="<?php echo $subject;?>">
+  <span class="error"> <?php echo $subjError;?><br>
+						
+						<p class="lbl">Questions or comments</p>
+						<textarea type="text" id="comment" name="comment" tabindex="5" maxlength="1500"><?php echo $comment;?></textarea><br>
+					</fieldset>	
+					
+					<input class="sendBtn" type="submit" name="submit" value="Submit" tabindex="6">
+
+					</div><!-- /.form-block -->
+				</form>
+
 			</div>
 		</main>
 

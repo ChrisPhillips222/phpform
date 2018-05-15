@@ -1,0 +1,39 @@
+/*
+File Name: mixins.less
+Date: 04/27/18
+Programmers: Janice Bradford
+Project: History 251: Albina Street Walking Tour
+*/
+
+/* VARIABLES */
+
+/* Color theme */
+@black-bkgnd: #101010; // black for background
+@black-text: #000000;  // black for text
+@white: #fff;
+@red: #ff0000;
+@yellow: #ffff06;
+@green: #06a811;
+@grey: #A0A0A0;
+@ltgrey: #f6f6f6; 
+
+/* Font sizes */
+@m_font_size: 16px; 
+@t_font_size: @m_font_size * 1.1; 
+@d_font_size: @m_font_size * 1.2;
+@h1_font_size: 1.25em;
+@h2_font_size: @h1_font_size * 1; 
+@h3_font_size: @h1_font_size * .7;
+@copyright_font_size: .75em; 
+
+/* MIXINS */
+
+#project_mixins {
+
+    .common_properties(@bg_color, @font_size, @body_margin){
+        background-color: @bg_color;
+        font-size: @font_size;
+        margin: @body_margin;
+    }
+
+}

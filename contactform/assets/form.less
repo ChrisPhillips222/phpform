@@ -1,0 +1,122 @@
+/*
+File Name: form.less
+Date: 02/13/18
+Programmer: Janice Bradford
+Project: Ace in the Hole Multisport Events Registration and Contact Forms 
+*/ 
+
+@import "mixins.less"; 
+ 
+/* use to outline blocks for styling and debugging 
+* { outline: 1px solid red !important } */ 
+
+/* MOBILE STYLES < 481 pixels*/ 
+
+.form-block {
+    margin-left: 13px; 
+    margin-right: 13px;
+		//background-color: beige; 
+}
+
+input[type=text], input[type=email], input[type=number], select { 
+    width: 100%;
+    padding: 8px 10px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 7px;
+		background-color: @ltgrey; 
+}
+
+textarea { 
+	max-height: 10em;
+  max-width: 150em;
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid @black-bkgnd;
+	border-radius: 7px;
+	background-color: @ltgrey; 
+  resize: none; 
+}
+
+input[type=text]:focus, input[type=email]:focus, input[type=number]:focus, select:focus {
+    border: 1px solid #C1012B;
+}
+
+input[type=submit], input[type=reset] { 
+    border: none;
+		border-radius: 7px;
+    padding: 16px 32px;
+    font-size: 17px;
+    text-decoration: none;
+    //margin: 1em 1em 1em 1em;
+		margin-left: 30%; 
+		margin-top: 1em;
+		margin-bottom: 1em; 
+    width: 7em;
+    cursor: pointer;
+}
+
+input[type=submit]:hover, input[type=reset]:hover {
+  opacity: .8;
+}
+
+fieldset {
+  border: 0px; 
+}
+
+.sendBtn { 
+  background-color: @green;
+  color: #FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*
+.cancelBtn {
+  background-color: #000000;
+  color: #FFFFFF;  
+}
+*/ 
+
+.lbl {
+  padding: .5em 0 0 0;
+  margin: 0; 
+}
+
+/* TABLET STYLES < 1024 pixels */
+
+@media only screen and (min-width: 481px) { 
+	
+	.form-block {
+			width: 400px;
+			margin: auto; 
+			padding-left: 25px;
+	}
+  
+  input[type=text], input[type=email], select {
+    width: 85%;
+  }
+ 
+	#email, #firstName, #lastName {
+		width: 85%;
+	}
+	
+	#comment, #subject {
+    width: 85%; 
+  }
+}
+
+/* DESKTOP STYLES  >= 1024 pixels*/  
+
+@media only screen and (min-width: 1024px) {
+ 
+	.form-block {
+		width: 600px;
+		margin: auto;
+		padding-left: 75px; 
+	}
+}

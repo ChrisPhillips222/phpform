@@ -1,17 +1,24 @@
 <?php
-
 if(isset($_POST["submit"])) {
-  $errCount = false;
-  if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
+	
+  if (empty($_POST["firstName"])) {
+    $nameErr = "First Name is required";
   } else {
-    $name = test_input($_POST["name"]);
+    $firstName = test_input($_POST["firstName"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-      $nameErr = "Only letters and white space allowed";
+    if (!preg_match("/^[a-zA-Z ]*$/",$firstName)) {
+      $firstNameErr = "Only letters and white space allowed"; 
+    }
+  }
+ if (empty($_POST["lastName"])) {
+	$lastName = "";
+  } else {
+    $lastName = test_input($_POST["lastName"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$lastName)) {
+      $lastNameErr = "Only letters and white space allowed"; 
     }
   } 
-  
   if (empty($_POST["email"])) {
     $emailErr = "Email is required";
   } else {
@@ -34,7 +41,7 @@ if(isset($_POST["submit"])) {
   } else {
     $comment = test_input($_POST["comment"]);
   }
-  if ($nameErr=='' && $emailErr=='' && $subjError=='' ){
+  if ($firstNameErr=='' && $lastNameErr=='' && $emailErr=='' && $subjError=='' ){
       include "includes/writetodatabase.php";
       include "includes/mailprocessing.php";
 }

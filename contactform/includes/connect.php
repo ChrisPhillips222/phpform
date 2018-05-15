@@ -5,7 +5,8 @@
 $nameErr = "";
 $emailErr = ""; 
 $subjError = "";
-$name = "";
+$firstName = "";
+$lastName = "";
 $email = "";
 $subject = ""; 
 $comment = "";
@@ -13,9 +14,9 @@ $comment = "";
 //set database log in information
 
 $host = "localhost";
-$userName = "paigedah_mailtester";
-$password = "TheMailTester1";
-$dbName = "paigedah_mailtest";
+$userName = "janicebr_group1admin";
+$password = "cas285group1";
+$dbName = "janicebr_cas285group1";
  
 // Create database connection
 $conn = new mysqli($host, $userName, $password, $dbName);
